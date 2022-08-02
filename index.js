@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 import servicesRouter from './routes/services.js';
+import loginRouter from './routes/login.js';
 
 dotenv.config();
 const app = express();
@@ -13,6 +14,7 @@ app.use(cors());
 const PORT = process.env.PORT || 3001;
 
 app.use('/services', servicesRouter);
+app.use('/login', loginRouter);
 
 app.get('/', (req, res) => {
 	res.send('Welcome, this is from Hair Salon backend');
