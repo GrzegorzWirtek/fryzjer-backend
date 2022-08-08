@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 
 import servicesRouter from './routes/services.js';
 import loginRouter from './routes/login.js';
+import contactRouter from './routes/contact.js';
 
 dotenv.config();
 const app = express();
@@ -15,6 +16,7 @@ const PORT = process.env.PORT || 3001;
 
 app.use('/services', servicesRouter);
 app.use('/login', loginRouter);
+app.use('/contact', contactRouter);
 
 app.get('/', (req, res) => {
 	res.send('Welcome, this is from Hair Salon backend');
