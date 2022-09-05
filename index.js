@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 });
 
 mongoose
-	.connect(process.env.MONGOOSE_URL)
+	.connect(process.env.MONGOOSE_URL, { useNewUrlParser: true })
 	.then(() =>
 		app.listen(PORT, () => console.log(`Server runing on port ${PORT}`)),
 	)
